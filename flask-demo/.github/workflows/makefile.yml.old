@@ -1,0 +1,39 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Docker Login
+      users: docker/login-action@v1.10.0
+      with:
+        username: ${{}}
+        password: ${{}}
+        logout: true
+    
+
+    - name: build image
+      run: |
+        make image
+        docker tag flask-demo:latest ${{ secrets.}}/flask-demo"${{github.sha}}
+        docker push ${{ secrets.}}/flask-demo"${{github.sha}}
+
+    - name: trigger CI
+      run: ./configure
+      
+    - name: Install dependencies
+      run: make
+      
+    - name: Run check
+      run: make check
+      

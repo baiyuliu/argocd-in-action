@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Tue Aug  2 21:56:02 2022
+
+# Make data base, printed on Wed Aug  3 09:40:28 2022
 
 # Variables
 
@@ -15,8 +18,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -38,11 +39,11 @@ GO111MODULE = auto
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_CWD = /Users/eric.liu/argocd/argocd-in-action
+VSCODE_CWD = /
 # environment
 GOPROXY = https://goproxy.cn,https://proxy.golang.org,direct
 # environment
-PATH = /opt/homebrew/opt/gnu-sed/libexec/gnubin:/opt/homebrew/Cellar/kustomize/4.5.6/bin:/Users/eric.liu/.pyenv/shims:/Users/eric.liu/.pyenv/bin:/Users/eric.liu/GoProjects/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:/Users/eric.liu/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
+PATH = /Users/eric.liu/.pyenv/shims:/Users/eric.liu/.pyenv/bin:/Users/eric.liu/GoProjects/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin://bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -72,8 +73,6 @@ HOME = /Users/eric.liu
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
 VSCODE_CODE_CACHE_PATH = /Users/eric.liu/Library/Application Support/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
 # environment
 LOGNAME = eric.liu
@@ -87,32 +86,24 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
 # environment
-LC_TERMINAL = iTerm2
-# environment
-SHLVL = 3
+SHLVL = 1
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = eric.liu
 # makefile
 .DEFAULT_GOAL := 
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:46462E5B-2831-494C-B630-D98AD1554507
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -132,21 +123,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.15
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.4329227.4329233.CFBC2610-1D20-464D-A0B2-A69C6CE95716
-# environment
-LC_TERMINAL_VERSION = 3.4.15
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.4329227.4329233
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GOSUMDB = sum.golang.google.cn
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:46462E5B-2831-494C-B630-D98AD1554507
-# environment
-COLORFGBG = 7;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x19:0x34
 # environment
@@ -155,8 +138,6 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
 # environment
 PROXY_PORT = 7890
 # environment
@@ -176,11 +157,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
 VSCODE_PID = 659
 # variable set hash-table stats:
-# Load=84/1024=8%, Rehash=0, Collisions=4/104=4%
+# Load=72/1024=7%, Rehash=0, Collisions=1/92=1%
 
 # Pattern-specific Variable Values
 
@@ -188,9 +167,9 @@ VSCODE_PID = 659
 
 # Directories
 
-# . (device 16777231, inode 6480505): 9 files, no impossibilities.
+# . (device 16777231, inode 6480505): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -262,8 +241,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue Aug  2 21:56:02 2022
+# Finished Make data base on Wed Aug  3 09:40:28 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
