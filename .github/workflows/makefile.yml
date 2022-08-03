@@ -13,9 +13,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Docker Login
+      users: docker/login-action@v1.10.0
+      with:
+        username: ${{secrets.DOCKER_ACCOUNT}}
+        password: ${{secrets.DOCKER_PASSWORD}}
+        logout: true
     
-    - name: configure
-      run: ./configure
+
+    - name: build image
+      run: |
+        make image
+        docker tag flask-demo:latest ${{ secrets.DOCKER_ACCOUNT}}/flask-demo"${{github.sha}}
+        docker push ${{ secrets.DOCKER_ACCOUNT}}/flask-demo"${{github.sha}}
+
+    - name: trigger CI
+      uses: InformaticsMatters/trigger-ci-action@1.0.1
+      with:
+        ci-owner: baiyuliu
+        ci-repository: flask-demo-kustomize
+        ci-ref: refs/heads/master
+        ci-user: baiyuliu
+        ci-user-token: ${{ secets.CI_TOKEN}}
+        ci-name : CI
+        ci-inputs: >-
+          image=${{secets.DOCKER_ACCOUNT}}/flask-demo
+          sha-tag=${{github.sha}}
       
     - name: Install dependencies
       run: make
@@ -23,5 +47,3 @@ jobs:
     - name: Run check
       run: make check
       
-    - name: Run distcheck
-      run: make distcheck
